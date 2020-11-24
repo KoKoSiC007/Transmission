@@ -1,0 +1,2 @@
+class DeltaH < ApplicationRecord
+end
