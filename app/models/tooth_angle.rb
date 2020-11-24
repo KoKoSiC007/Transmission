@@ -1,0 +1,2 @@
+class ToothAngle < ApplicationRecord
+end
