@@ -19,8 +19,18 @@ require "sprockets/railtie"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+def load_config
+  require 'yaml'
+  config = YAML.load_file('config/config.yml', false)
+
+  config.each do |key, value|
+    ENV[key] = value.to_s
+  end
+end
+
 module Transmission
   class Application < Rails::Application
+    load_config
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
 
