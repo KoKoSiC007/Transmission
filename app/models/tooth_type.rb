@@ -1,0 +1,2 @@
+class ToothType < ApplicationRecord
+end
