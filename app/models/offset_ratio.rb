@@ -1,0 +1,2 @@
+class OffsetRatio < ApplicationRecord
+end
