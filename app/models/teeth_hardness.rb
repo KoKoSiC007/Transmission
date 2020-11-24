@@ -1,0 +1,2 @@
+class TeethHardness < ApplicationRecord
+end
