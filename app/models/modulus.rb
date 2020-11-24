@@ -1,0 +1,2 @@
+class Modulus < ApplicationRecord
+end
