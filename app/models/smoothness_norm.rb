@@ -1,0 +1,2 @@
+class SmoothnessNorm < ApplicationRecord
+end
