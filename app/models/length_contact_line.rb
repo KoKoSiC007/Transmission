@@ -1,0 +1,2 @@
+class LengthContactLine < ApplicationRecord
+end
