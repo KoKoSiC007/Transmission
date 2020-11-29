@@ -1,0 +1,2 @@
+class MatedWheel < ApplicationRecord
+end
