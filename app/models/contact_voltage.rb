@@ -1,0 +1,2 @@
+class ContactVoltage < ApplicationRecord
+end
