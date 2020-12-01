@@ -1,17 +1,14 @@
 class LengthContactLine < ApplicationRecord
   belongs_to :ea, class_name: 'Ea'
+  belongs_to :eb, class_name: 'Eb'
 
-  def calc(bw, b, m, ea)
-    eb = calc_eb(bw, b, m)
+  def calc(ea, eb)
     value = if eb < 0.9
               Math.sqrt((4 - ea) / 3)
             else
               Math.sqrt(1 / ea)
             end
-    create(value: value)
-  end
 
-  def calc_eb(bw, b, m)
-    bw * Math.sin(b / (Math.PI * m))
+    create(value: value, ea: ea, eb: eb)
   end
 end
