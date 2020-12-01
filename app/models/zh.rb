@@ -5,6 +5,6 @@ class Zh < ApplicationRecord
   def calc(bb, atw)
     value = Math.sqrt(2 * Math.cos(bb)/ Math.sin(2 * atw))
 
-    create(value: value)
+    create(value: value, bb: bb, atw: atw)
   end
 end
