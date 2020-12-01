@@ -1,12 +1,10 @@
 class Khv < ApplicationRecord
-  belongs_to :smoothness_norm, class_name: 'SmoothnessNorm'
-  belongs_to :v, class_name: 'V'
+  belongs_to :whv, class_name: 'Whv'
+  belongs_to :kha, class_name: 'Kha'
+  belongs_to :ft, class_name: 'Ft'
 
-  def calc(type, v, gost)
-    if type == 1
-      1
-    else
-      Khv.where(v: v, smoothness_norm_id: gost).take
-    end
+  def calc(bw, ft, kha, khb, whv)
+    value = 1 + whv * bw / (ft * kha * khb)
+    create(value: value, whv: whv, bw: bw, kha: kha, khb: khb, ft: ft)
   end
 end
