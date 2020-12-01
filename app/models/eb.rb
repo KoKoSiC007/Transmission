@@ -1,5 +1,5 @@
 class Eb < ApplicationRecord
-  has_many :length_contact_lines
+  has_many :zms
 
   def calc(bw, b, modulus)
     value = bw * Math.sin(b / (Math.PI * modulus))

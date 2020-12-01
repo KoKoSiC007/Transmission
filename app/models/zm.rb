@@ -1,4 +1,4 @@
-class LengthContactLine < ApplicationRecord
+class Zm < ApplicationRecord
   belongs_to :ea, class_name: 'Ea'
   belongs_to :eb, class_name: 'Eb'
 
