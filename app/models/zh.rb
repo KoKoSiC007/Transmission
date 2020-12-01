@@ -1,8 +1,10 @@
-class ShapeMatingSurface < ApplicationRecord
+class Zh < ApplicationRecord
   belongs_to :tooth_angle, class_name: 'ToothAngle', optional: true
   belongs_to :offset_ratio, class_name: 'OffsetRatio', optional: true
 
   def calc(bb, atw)
-    create(value: Math.sqrt(2 * Math.cos(bb)/ Math.sin(2 * atw)))
+    value = Math.sqrt(2 * Math.cos(bb)/ Math.sin(2 * atw))
+
+    create(value: value)
   end
 end

@@ -5,6 +5,7 @@ class Khv < ApplicationRecord
 
   def calc(bw, ft, kha, khb, whv)
     value = 1 + whv * bw / (ft * kha * khb)
+
     create(value: value, whv: whv, bw: bw, kha: kha, khb: khb, ft: ft)
   end
 end

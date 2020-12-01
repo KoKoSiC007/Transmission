@@ -1,3 +1,3 @@
 class OffsetRatio < ApplicationRecord
-  has_many :shape_mating_surfaces, class_name: 'ShapeMatingSurface'
+  has_many :zhs, class_name: 'Zh'
 end
