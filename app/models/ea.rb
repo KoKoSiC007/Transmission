@@ -1,5 +1,5 @@
 class Ea < ApplicationRecord
-  has_many :zms
+  has_many :zes
 
   def calc(z1, z2, b)
     value = (1.88 - 3.2 * (1 / z1 + 1 / z2)) * Math.cos(b)

@@ -1,5 +1,5 @@
 class Eb < ApplicationRecord
-  has_many :zms
+  has_many :zes
 
   def calc(bw, b, modulus)
     value = bw * Math.sin(b / (Math.PI * modulus))

@@ -1,14 +1,9 @@
 class Zm < ApplicationRecord
-  belongs_to :ea, class_name: 'Ea'
-  belongs_to :eb, class_name: 'Eb'
 
-  def calc(ea, eb)
-    value = if eb < 0.9
-              Math.sqrt((4 - ea) / 3)
-            else
-              Math.sqrt(1 / ea)
-            end
+  def calc(vp, e1, e2)
+    value = Math.sqrt((1/(Math.PI * (1 - vp*vp))) * (2 * e1 * e1 / (e1 + e2)))
 
-    create(value: value, ea: ea, eb: eb)
+    create(value: value, e1: e1, e2: e2, vp: vp)
   end
 end
+
