@@ -35,10 +35,6 @@
   <%= form.text_field :delta %>
   <br/>
 
-  <%= form.label :v, "Окружная скорость" %>
-  <%= form.text_field :v %>
-  <br/>
-
   <%= form.label :e1, "Модуль упругости первой шестерни" %>
   <%= form.text_field :e1 %>
   <br/>
@@ -51,8 +47,37 @@
   <%= form.text_field :u %>
   <br/>
 
+  <%= form.label :t1, "Крутящий момент первого колеса" %>
+  <%= form.text_field :t1 %>
+  <br/>
+
+
   <%= form.label :m, "Модуль" %>
   <%= form.text_field :m %>
+  <br/>
+
+  <%= form.label :khb, "Khb" %>
+  <%= form.text_field :khb %>
+  <br/>
+
+  <%= form.label :smoothness_norm_id, "Нормы плавности работы" %>
+  <%= form.collection_select :smoothness_norm_id, SmoothnessNorm.all, :id, :value %>
+  <br/>
+
+  <%= form.label :transmission_type_id, "Тип передачи" %>
+  <%= form.collection_select :transmission_type_id, TransmissionType.all, :id, :value %>
+  <br/>
+
+  <%= form.label :v, "Окружная скорость" %>
+  <%= form.collection_select :v, V.all, :id, :value %>
+  <br/>
+
+  <%= form.label :teeth_hardness_id, "Твердость поверхности зубьев" %>
+  <%= form.collection_select :teeth_hardness_id, TeethHardness.all, :id, :value %>
+  <br/>
+
+  <%= form.label :tooth_type_id, "Вид зубьев" %>
+  <%= form.collection_select :tooth_type_id, ToothType.all, :id, :value %>
   <br/>
 
   <%= form.submit "Рассчитать" %>
