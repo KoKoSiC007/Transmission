@@ -1,3 +1,59 @@
-<%= form_with do |form| %>
+<%= form_with url: calc_index_url, method: :post do |form| %>
+  <%= form.label :bb, "Основной угол наклона линии зуба" %>
+  <%= form.text_field :bb %>
+  <br/>
 
+  <%= form.label :atw, "Угол зацепления" %>
+  <%= form.text_field :atw %>
+  <br/>
+
+  <%= form.label :z1, "Число зубьев на первой шестерни" %>
+  <%= form.text_field :z1 %>
+  <br/>
+
+  <%= form.label :z2, "Число зубьев на второй шестерни" %>
+  <%= form.text_field :z2 %>
+  <br/>
+
+  <%= form.label :b, "Угор наклона зубьев" %>
+  <%= form.text_field :b %>
+  <br/>
+
+  <%= form.label :bw, "Ширина венца" %>
+  <%= form.text_field :bw %>
+  <br/>
+
+  <%= form.label :dw1, "Диаметр первой шестерни" %>
+  <%= form.text_field :dw1 %>
+  <br/>
+
+  <%= form.label :aw, "Меж осевое расстояние" %>
+  <%= form.text_field :aw %>
+  <br/>
+
+  <%= form.label :delta, "Требуемое отклонение" %>
+  <%= form.text_field :delta %>
+  <br/>
+
+  <%= form.label :v, "Окружная скорость" %>
+  <%= form.text_field :v %>
+  <br/>
+
+  <%= form.label :e1, "Модуль упругости первой шестерни" %>
+  <%= form.text_field :e1 %>
+  <br/>
+
+  <%= form.label :e2, "Модуль упругости второй шестерни" %>
+  <%= form.text_field :e2 %>
+  <br/>
+
+  <%= form.label :u, "Передаточное число" %>
+  <%= form.text_field :u %>
+  <br/>
+
+  <%= form.label :m, "Модуль" %>
+  <%= form.text_field :m %>
+  <br/>
+
+  <%= form.submit "Рассчитать" %>
 <% end %>

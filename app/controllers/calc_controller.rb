@@ -4,7 +4,10 @@ class CalcController < ApplicationController
     @sigma_hs = SigmaH.all
   end
 
-  def new
+  def new; end
 
+  def create
+    p zh = Zh.calc(params[:bb].to_f, params[:atw].to_f)
+    p params
   end
 end
