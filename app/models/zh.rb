@@ -2,7 +2,7 @@ class Zh < ApplicationRecord
   belongs_to :b, class_name: 'B', optional: true
   belongs_to :offset_ratio, class_name: 'OffsetRatio', optional: true
 
-  has_many :sigma_hs, dependent: :destroy
+  has_many :sigma_hs
 
   def self.calc(bb, atw)
     b = B.find_or_create_by(value: bb)

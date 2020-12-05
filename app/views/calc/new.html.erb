@@ -1,84 +1,107 @@
+<div class="container" style="margin-top: 20px;margin-bottom: 20px;">
 <%= form_with url: calc_index_url, method: :post do |form| %>
-  <%= form.label :bb, "Основной угол наклона линии зуба" %>
-  <%= form.text_field :bb %>
-  <br/>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <%= form.label :bb, "Основной угол наклона линии зуба" %>
+      <%= form.text_field :bb, class: 'form-control' %>
+    </div>
+    <div class="form-group col-md-6">
+      <%= form.label :atw, "Угол зацепления" %>
+      <%= form.text_field :atw, class: 'form-control'%>
+    </div>
+  </div>
 
-  <%= form.label :atw, "Угол зацепления" %>
-  <%= form.text_field :atw %>
-  <br/>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <%= form.label :z1, "Число зубьев на первой шестерни" %>
+      <%= form.text_field :z1, class: 'form-control'%>
+    </div>
+    <div class="form-group col-md-6">
+      <%= form.label :z2, "Число зубьев на второй шестерни" %>
+      <%= form.text_field :z2, class: 'form-control' %>
+    </div>
+  </div>
 
-  <%= form.label :z1, "Число зубьев на первой шестерни" %>
-  <%= form.text_field :z1 %>
-  <br/>
-
-  <%= form.label :z2, "Число зубьев на второй шестерни" %>
-  <%= form.text_field :z2 %>
-  <br/>
-
-  <%= form.label :b, "Угор наклона зубьев" %>
-  <%= form.text_field :b %>
-  <br/>
-
-  <%= form.label :bw, "Ширина венца" %>
-  <%= form.text_field :bw %>
-  <br/>
-
-  <%= form.label :dw1, "Диаметр первой шестерни" %>
-  <%= form.text_field :dw1 %>
-  <br/>
-
-  <%= form.label :aw, "Меж осевое расстояние" %>
-  <%= form.text_field :aw %>
-  <br/>
-
-  <%= form.label :delta, "Требуемое отклонение" %>
-  <%= form.text_field :delta %>
-  <br/>
-
-  <%= form.label :e1, "Модуль упругости первой шестерни" %>
-  <%= form.text_field :e1 %>
-  <br/>
-
-  <%= form.label :e2, "Модуль упругости второй шестерни" %>
-  <%= form.text_field :e2 %>
-  <br/>
-
-  <%= form.label :u, "Передаточное число" %>
-  <%= form.text_field :u %>
-  <br/>
-
-  <%= form.label :t1, "Крутящий момент первого колеса" %>
-  <%= form.text_field :t1 %>
-  <br/>
-
-
-  <%= form.label :m, "Модуль" %>
-  <%= form.text_field :m %>
-  <br/>
-
-  <%= form.label :khb, "Khb" %>
-  <%= form.text_field :khb %>
-  <br/>
-
-  <%= form.label :smoothness_norm_id, "Нормы плавности работы" %>
-  <%= form.collection_select :smoothness_norm_id, SmoothnessNorm.all, :id, :value %>
-  <br/>
-
-  <%= form.label :transmission_type_id, "Тип передачи" %>
-  <%= form.collection_select :transmission_type_id, TransmissionType.all, :id, :value %>
-  <br/>
-
-  <%= form.label :v, "Окружная скорость" %>
-  <%= form.collection_select :v, V.all, :id, :value %>
-  <br/>
-
-  <%= form.label :teeth_hardness_id, "Твердость поверхности зубьев" %>
-  <%= form.collection_select :teeth_hardness_id, TeethHardness.all, :id, :value %>
-  <br/>
-
-  <%= form.label :tooth_type_id, "Вид зубьев" %>
-  <%= form.collection_select :tooth_type_id, ToothType.all, :id, :value %>
-  <br/>
-
-  <%= form.submit "Рассчитать" %>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <%= form.label :b, "Угор наклона зубьев" %>
+      <%= form.text_field :b, class: 'form-control' %>
+    </div>
+    <div class="form-group col-md-6">
+      <%= form.label :bw, "Ширина венца" %>
+      <%= form.text_field :bw, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <%= form.label :dw1, "Диаметр первой шестерни" %>
+      <%= form.text_field :dw1, class: 'form-control' %>
+    </div>
+    <div class="form-group col-md-6">
+      <%= form.label :aw, "Меж осевое расстояние" %>
+      <%= form.text_field :aw, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <%= form.label :delta, "Требуемое отклонение" %>
+      <%= form.text_field :delta, class: 'form-control' %>
+    </div>
+    <div class="form-group col-md-6">
+      <%= form.label :e1, "Модуль упругости первой шестерни" %>
+      <%= form.text_field :e1, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <%= form.label :e2, "Модуль упругости второй шестерни" %>
+      <%= form.text_field :e2, class: 'form-control' %>
+    </div>
+    <div class="form-group col-md-6">
+      <%= form.label :u, "Передаточное число" %>
+      <%= form.text_field :u, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <%= form.label :t1, "Крутящий момент первого колеса" %>
+      <%= form.text_field :t1, class: 'form-control' %>
+    </div>
+    <div class="form-group col-md-6">
+      <%= form.label :m, "Модуль" %>
+      <%= form.text_field :m, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <%= form.label :khb, "Khb" %>
+      <%= form.text_field :khb, class: 'form-control' %>
+    </div>
+    <div class="form-group col-md-6">
+      <%= form.label :smoothness_norm_id, "Нормы плавности работы" %>
+      <%= form.collection_select :smoothness_norm_id, SmoothnessNorm.all, :id, :value, {},  class: 'form-control' %>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <%= form.label :transmission_type_id, "Тип передачи" %>
+      <%= form.collection_select :transmission_type_id, TransmissionType.all, :id, :value, {},  class: 'form-control' %>
+    </div>
+    <div class="form-group col-md-6">
+      <%= form.label :v, "Окружная скорость" %>
+      <%= form.collection_select :v, V.all, :id, :value, {}, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <%= form.label :teeth_hardness_id, "Твердость поверхности зубьев" %>
+      <%= form.collection_select :teeth_hardness_id, TeethHardness.all, :id, :value, {},  class: 'form-control' %>
+    </div>
+    <div class="form-group col-md-6">
+      <%= form.label :tooth_type_id, "Вид зубьев" %>
+      <%= form.collection_select :tooth_type_id, ToothType.all, :id, :value, {},  class: 'form-control' %>
+    </div>
+  </div>
+    <%= form.submit "Рассчитать", class: 'btn btn-primary btn-lg btn-block' %>
 <% end %>
+</div>

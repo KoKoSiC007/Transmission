@@ -8,11 +8,17 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  <nav class="navbar navbar-light bg-light">
-    <%= link_to "Index", calc_index_path, class: 'navbar-brand' %>
-    <%= link_to "New", new_calc_path, class: 'navbar-brand' %>
+  <nav class="navbar navbar-dark bg-primary">
+    <%= link_to "Все", calc_index_path, class: 'navbar-brand' %>
+    <%= link_to new_calc_path, class: 'navbar-brand' do %>
+      <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-plus-square-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
+      </svg>
+    <% end %>
   </nav>
   <body>
+    <div>
     <%= yield %>
+    </div>
   </body>
 </html>
