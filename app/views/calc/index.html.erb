@@ -1,16 +1,31 @@
 <div style="margin: 10px">
-<table class="table">
+<table id="main_table" class="table table-striped sortable">
   <thead>
   <tr>
-    <th scope="col">Id</th>
-    <th scope="col">Value</th>
+    <th scope="col" data-sortable="true">Id</th>
+    <th scope="col" data-sortable="true">Value</th>
+    <th scope="col" data-sortable="true">Zh</th>
+    <th scope="col" data-sortable="true">Zm</th>
+    <th scope="col" data-sortable="true">Ze</th>
+    <th scope="col" data-sortable="true">Wht</th>
+    <th scope="col" data-sortable="true">U</th>
+    <th scope="col" data-sortable="true">Dw1</th>
+    <th scope="col">Delete?</th>
   </tr>
   </thead>
   <tbody>
   <% @sigma_hs.each do |sigma| %>
   <tr>
     <th scope="row"><%=sigma.id %></th>
-    <td><%=sigma.value %></td>
+    <td ><%=sigma.value %></td>
+    <td><%=sigma.zh.value %></td>
+    <td><%=sigma.zm.value %></td>
+    <td><%=sigma.ze.value %></td>
+    <td><%=sigma.wht.value %></td>
+    <td><%=sigma.u.value %></td>
+    <td><%=sigma.dw1.value %></td>
+
+    <td><%= link_to 'Удалить', calc_path(sigma), method: :delete %></td>
   </tr>
     <% end %>
   </tbody>

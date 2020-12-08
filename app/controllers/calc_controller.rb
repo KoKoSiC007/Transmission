@@ -1,7 +1,7 @@
 class CalcController < ApplicationController
 
   def index
-    @sigma_hs = SigmaH.all
+    @sigma_hs = SigmaH.all.includes(:dw1, :u, :wht, :zm, :ze, :zh)
   end
 
   def new; end
@@ -18,6 +18,12 @@ class CalcController < ApplicationController
     dw1 = Dw1.find_or_create_by(value: params[:dw1].to_f)
 
     SigmaH.calc(zh, zm, ze, wht, u, dw1)
+
+    redirect_to calc_index_path
+  end
+
+  def destroy
+    SigmaH.find(params[:id]).destroy!
 
     redirect_to calc_index_path
   end
