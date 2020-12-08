@@ -13,11 +13,11 @@ class CalcController < ApplicationController
 
     wht = calc_wht
 
-    u = U.find_or_create_by(value: params[:u].to_f)
+    u = U.find_or_create_by(value: params[:z2].to_f / params[:z1].to_f)
 
     dw1 = Dw1.find_or_create_by(value: params[:dw1].to_f)
 
-    SigmaH.calc(zh, zm, ze, wht, u, dw1)
+    SigmaH.calc(zh, zm, ze, wht, u, dw1, params[:delta].to_f, params[:sigma_hp].to_f)
 
     redirect_to calc_index_path
   end
@@ -58,7 +58,7 @@ class CalcController < ApplicationController
 
     v = V.find(params[:v])
 
-    whv = Whv.calc(delta_h, g0, v, params[:aw].to_f, params[:u].to_f, modulus, gost)
+    whv = Whv.calc(delta_h, g0, v, params[:aw].to_f, params[:z2].to_f / params[:z1].to_f, modulus, gost)
 
     bw = Bw.find_or_create_by(value: params[:bw].to_f)
 

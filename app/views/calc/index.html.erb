@@ -10,6 +10,8 @@
     <th scope="col" data-sortable="true">Wht</th>
     <th scope="col" data-sortable="true">U</th>
     <th scope="col" data-sortable="true">Dw1</th>
+    <th scope="col" data-sortable="true">delta</th>
+    <th scope="col" data-sortable="true">Passed?</th>
     <th scope="col">Delete?</th>
   </tr>
   </thead>
@@ -24,6 +26,8 @@
     <td><%=sigma.wht.value %></td>
     <td><%=sigma.u.value %></td>
     <td><%=sigma.dw1.value %></td>
+    <td><%=sigma.delta %></td>
+    <td><%=sigma.passed %></td>
 
     <td><%= link_to 'Удалить', calc_path(sigma), method: :delete %></td>
   </tr>

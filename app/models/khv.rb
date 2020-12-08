@@ -7,6 +7,7 @@ class Khv < ApplicationRecord
 
 
   def self.calc(bw, ft, kha, khb, whv)
+    p bw, ft, kha, khb, whv
     value = 1 + whv.value * bw.value / (ft.value * kha.value * khb)
 
     find_or_create_by(value: value, whv: whv, bw: bw, kha: kha, khb: khb, ft: ft)

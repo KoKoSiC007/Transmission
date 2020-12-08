@@ -6,9 +6,11 @@ class SigmaH < ApplicationRecord
   belongs_to :u, class_name: 'U'
   belongs_to :dw1, class_name: 'Dw1'
 
-  def self.calc(zh, zm, ze, wht, u, dw1)
+  def self.calc(zh, zm, ze, wht, u, dw1, delta, sigma_hp)
     value = zh.value * zm.value * ze.value * Math.sqrt(wht.value * (u.value + 1)/ (dw1.value * u.value))
 
-    create(value: value, zh: zh, zm: zm, ze: ze, wht: wht, u: u, dw1: dw1)
+    passed = (value - sigma_hp) < delta
+
+    create(value: value, zh: zh, zm: zm, ze: ze, wht: wht, u: u, dw1: dw1, delta: delta, passed: passed)
   end
 end

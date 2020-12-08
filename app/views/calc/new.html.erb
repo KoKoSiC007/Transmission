@@ -2,73 +2,73 @@
 <%= form_with url: calc_index_url, method: :post do |form| %>
   <div class="form-row">
     <div class="form-group col-md-6">
-      <%= form.label :bb, "Основной угол наклона линии зуба" %>
+      <%= form.label :bb, "Основной угол наклона линии зуба, bb" %>
       <%= form.text_field :bb, class: 'form-control' %>
     </div>
     <div class="form-group col-md-6">
-      <%= form.label :atw, "Угол зацепления" %>
+      <%= form.label :atw, "Угол зацепления, atw" %>
       <%= form.text_field :atw, class: 'form-control'%>
     </div>
   </div>
 
   <div class="form-row">
     <div class="form-group col-md-6">
-      <%= form.label :z1, "Число зубьев на первой шестерни" %>
+      <%= form.label :z1, "Число зубьев на первой шестерни, z1" %>
       <%= form.text_field :z1, class: 'form-control'%>
     </div>
     <div class="form-group col-md-6">
-      <%= form.label :z2, "Число зубьев на второй шестерни" %>
+      <%= form.label :z2, "Число зубьев на второй шестерни, z2" %>
       <%= form.text_field :z2, class: 'form-control' %>
     </div>
   </div>
 
   <div class="form-row">
     <div class="form-group col-md-6">
-      <%= form.label :b, "Угор наклона зубьев" %>
+      <%= form.label :b, "Угор наклона зубьев, b" %>
       <%= form.text_field :b, class: 'form-control' %>
     </div>
     <div class="form-group col-md-6">
-      <%= form.label :bw, "Ширина венца" %>
+      <%= form.label :bw, "Ширина венца, bw" %>
       <%= form.text_field :bw, class: 'form-control' %>
     </div>
   </div>
   <div class="form-row">
     <div class="form-group col-md-6">
-      <%= form.label :dw1, "Диаметр первой шестерни" %>
+      <%= form.label :dw1, "Диаметр первой шестерни, dw1" %>
       <%= form.text_field :dw1, class: 'form-control' %>
     </div>
     <div class="form-group col-md-6">
-      <%= form.label :aw, "Меж осевое расстояние" %>
+      <%= form.label :aw, "Меж осевое расстояние, aw" %>
       <%= form.text_field :aw, class: 'form-control' %>
     </div>
   </div>
   <div class="form-row">
     <div class="form-group col-md-6">
-      <%= form.label :delta, "Требуемое отклонение" %>
+      <%= form.label :delta, "Требуемое отклонение, delta" %>
       <%= form.text_field :delta, class: 'form-control' %>
     </div>
     <div class="form-group col-md-6">
-      <%= form.label :e1, "Модуль упругости первой шестерни" %>
+      <%= form.label :e1, "Модуль упругости первой шестерни, E1" %>
       <%= form.text_field :e1, class: 'form-control' %>
     </div>
   </div>
   <div class="form-row">
     <div class="form-group col-md-6">
-      <%= form.label :e2, "Модуль упругости второй шестерни" %>
+      <%= form.label :e2, "Модуль упругости второй шестерни, E2" %>
       <%= form.text_field :e2, class: 'form-control' %>
     </div>
     <div class="form-group col-md-6">
-      <%= form.label :u, "Передаточное число" %>
-      <%= form.text_field :u, class: 'form-control' %>
+      <%= form.label :vp, "коэффицинет Пуассона, V" %>
+      <%= form.text_field :vp, class: 'form-control' %>
     </div>
   </div>
   <div class="form-row">
     <div class="form-group col-md-6">
-      <%= form.label :t1, "Крутящий момент первого колеса" %>
+      <%= form.label :t1, "Крутящий момент первого колеса, T1" %>
       <%= form.text_field :t1, class: 'form-control' %>
     </div>
     <div class="form-group col-md-6">
-      <%= form.label :m, "Модуль" %>
+      <%= form.label :m, "Модуль, m" %>
       <%= form.text_field :m, class: 'form-control' %>
     </div>
   </div>
@@ -88,7 +88,7 @@
       <%= form.collection_select :transmission_type_id, TransmissionType.all, :id, :value, {},  class: 'form-control' %>
     </div>
     <div class="form-group col-md-6">
-      <%= form.label :v, "Окружная скорость" %>
+      <%= form.label :v, "Окружная скорость, v" %>
       <%= form.collection_select :v, V.all, :id, :value, {}, class: 'form-control' %>
     </div>
   </div>
@@ -101,6 +101,10 @@
       <%= form.label :tooth_type_id, "Вид зубьев" %>
       <%= form.collection_select :tooth_type_id, ToothType.all, :id, :value, {},  class: 'form-control' %>
     </div>
+  </div>
+  <div class="form-group">
+    <%= form.label :sigma_hp, "Допускаемое контактное напряжение, SigmaHP" %>
+    <%= form.text_field :sigma_hp, class: 'form-control' %>
   </div>
     <%= form.submit "Рассчитать", class: 'btn btn-primary btn-lg btn-block' %>
 <% end %>

@@ -8,6 +8,7 @@ class Zh < ApplicationRecord
     b = B.find_or_create_by(value: bb)
 
     offset = OffsetRatio.find_or_create_by(value: atw)
+    p bb, atw
 
     value = Math.sqrt(2 * Math.cos(b.value)/ Math.sin(2 * offset.value))
 
